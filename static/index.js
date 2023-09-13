@@ -15,6 +15,7 @@ form.addEventListener("submit", function(evt){
     })
     .then((response) => response.json())
     .then(data => {
+        console.log(data)
         const colors = data.colors;
         const container = document.querySelector(".container");
         container.innerHTML = "";

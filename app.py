@@ -16,10 +16,10 @@ def get_colors(msg):
     You should genereate color palettes that fit hte theme, mood, or instructions in the prompt. 
     The palettes should be between 2 and 8 colors
 
-    Q:Covert the following verbal descrition of of a color palette into a list of colors: summer theme
+    Q:Covert the following verbal descrition of of a color palette into a list of colors: summer
     A:["#EF9595","#EFB495","#EFD595", "#EBEF95"]
 
-    Q:Covert the following verbal descrition of of a color palette into a list of colors: winter theme
+    Q:Covert the following verbal descrition of of a color palette into a list of colors: winter
     A:["#F5EFE7","#D8C4B6","#4F709C", "#213555"]
 
     Q:Covert the following verbal descrition of of a color palette into a list of colors: {msg}
@@ -32,6 +32,7 @@ def get_colors(msg):
         max_tokens=100,
     )
     
+    print("RESPONSE", response)
     colors = json.loads(response["choices"][0]["text"])
     return colors
 
